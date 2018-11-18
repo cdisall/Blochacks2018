@@ -12,5 +12,7 @@ public class MainFrame {
 		transactions = parse.getTransactions();
 		System.out.println(transactions.toString());
 		
+		System.out.println();
+		
 	}
 }
