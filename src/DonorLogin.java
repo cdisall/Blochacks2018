@@ -33,8 +33,8 @@ public class DonorLogin {
             	}
             	if(!test) {
             		Donor newOne = new Donor(email, pwd);
-            		Login.index=Login.donors.indexOf(newOne);
             		Login.donors.add(newOne);
+            		Login.index=Login.donors.indexOf(newOne);
             	}
             	
             	//System.out.println("Welcome!");

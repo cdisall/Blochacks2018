@@ -28,6 +28,8 @@ public class RecLogin {
             			if(R.getPassword().equals(pwd)) {
             				test=true;
             				Login.index=Login.recievers.indexOf(R);
+            				System.out.println("This is the login index: " +Login.index);
+            				
             				break;
             			}
             		}
@@ -35,8 +37,9 @@ public class RecLogin {
             	if(!test) {
             		Reciever newOne = new Reciever(email, pwd);
             		newOne.setDefaultNeeds();
-            		Login.index=Login.recievers.indexOf(newOne);
+            		System.out.println("This is the login index: " +Login.index);
             		Login.recievers.add(newOne);
+            		Login.index=Login.recievers.indexOf(newOne);
             	}
             	
             	System.out.println("Welcome!");

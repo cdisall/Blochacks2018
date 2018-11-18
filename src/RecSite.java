@@ -43,6 +43,7 @@ public class RecSite {
                 		ArrayList<Category> tester = new ArrayList<Category>();
                 		tester = MainFrame.getReport(transactions);
                 		Login.recievers.get(Login.index).setReport(tester);
+                		System.out.println("Testone");
                     }
                 }
                 
