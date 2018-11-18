@@ -33,6 +33,15 @@ public class MainFrame {
         recievers.add(0, r1);
         recievers.add(1, r2);
         recievers.add(2, r3);
+
+        r1.setDefaultNeeds();
+        r2.setDefaultNeeds();
+        r3.setDefaultNeeds();
+
+
+
+
+
 	}
 	
 	public static void addCategory(ArrayList<Transaction> transactions) {
