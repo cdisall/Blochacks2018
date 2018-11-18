@@ -9,5 +9,7 @@
 	<classpathentry kind="lib" path="pdfbox-2.0.12.jar"/>
 	<classpathentry kind="lib" path="commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="fontbox-2.0.12.jar"/>
+	<classpathentry kind="lib" path="javax.mail.jar"/>
+	<classpathentry kind="lib" path="activation-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
