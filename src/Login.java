@@ -10,9 +10,13 @@ public class Login {
 	public static int index;
     public  JButton donorButton = new JButton("Donor");
     public  JButton recipientButton = new JButton("Receipient");
-    public  JPanel panel1 = new JPanel(new FlowLayout());
+    public  JPanel panel1 = new JPanel(null);
 
     public Login() {
+        donorButton.setPreferredSize(new Dimension(150, 50));
+        recipientButton.setPreferredSize(new Dimension(150, 50));
+        panel1.setPreferredSize(new Dimension(400,80));
+        panel1.setLayout(new FlowLayout());
         panel1.add(donorButton);
         panel1.add(recipientButton);
         

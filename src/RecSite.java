@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.Object;
@@ -14,11 +15,16 @@ import javax.swing.filechooser.FileSystemView;
 public class RecSite {
     public JButton uploadStatementButton = new JButton("Updload Statement");
     public  JButton updateNeedsButton = new JButton("Update");
-    public  JPanel panel1 = new JPanel();
+    public  JPanel panel1 = new JPanel(null);
     public  JButton logoutButton = new JButton("Logout");
 
     public RecSite() {
         
+        uploadStatementButton.setPreferredSize(new Dimension(150, 50));
+        updateNeedsButton.setPreferredSize(new Dimension(150, 50));
+        logoutButton.setPreferredSize(new Dimension(150, 50));
+        panel1.setPreferredSize(new Dimension(500,80));
+        panel1.setLayout(new FlowLayout());
         panel1.add(updateNeedsButton);
         panel1.add(uploadStatementButton);
         panel1.add(logoutButton);

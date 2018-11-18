@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputMethodEvent;
@@ -11,10 +12,15 @@ public class RecLogin {
     public  JPanel panel1 = new JPanel();
 
     public RecLogin() {
+        panel1.setSize(new Dimension(400,300));
+        username.setPreferredSize(new Dimension(200,30));
+        passwordField1.setPreferredSize(new Dimension(200,30));
+        loginButton.setPreferredSize(new Dimension(150,50));
         panel1.add(username);
         panel1.add(passwordField1);
         panel1.add(loginButton);
-        
+        panel1.setLayout(new BoxLayout(panel1, BoxLayout.Y_AXIS));
+
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {

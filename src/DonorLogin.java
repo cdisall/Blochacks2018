@@ -1,20 +1,26 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputMethodEvent;
 import java.awt.event.InputMethodListener;
 
 public class DonorLogin {
-    public  JPanel panel1 = new JPanel();
+    public  JPanel panel1 = new JPanel(null);
     public  JTextField username = new JTextField();
     public  JButton loginButton = new JButton("Login");
     private JPasswordField password = new JPasswordField();
 
     public DonorLogin() {
-    	 
+    	
+    	panel1.setSize(new Dimension(400,300));
+    	username.setPreferredSize(new Dimension(200,30));
+    	password.setPreferredSize(new Dimension(200,30));
+        loginButton.setPreferredSize(new Dimension(150,50));
         panel1.add(username);
         panel1.add(password);
         panel1.add(loginButton);
+    	panel1.setLayout(new BoxLayout(panel1, BoxLayout.Y_AXIS));
         
         loginButton.addActionListener(new ActionListener() {
             @Override

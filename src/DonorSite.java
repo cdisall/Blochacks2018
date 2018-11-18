@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -7,13 +8,16 @@ import java.net.URISyntaxException;
 public class DonorSite {
     public JButton makeDonationButton  = new JButton("Make Donation");
     public JButton logoutButton = new JButton("Logout");
-    public JPanel panel1 = new JPanel();
-
-    public DonorSite() {
-    	
-        panel1.add(makeDonationButton);
-        panel1.add(logoutButton);
-        
+    public JPanel panel1 = new JPanel(null);
+    
+        public DonorSite() {
+            makeDonationButton.setPreferredSize(new Dimension(150, 50));
+            logoutButton.setPreferredSize(new Dimension(150, 50));
+            panel1.setPreferredSize(new Dimension(400,80));
+            panel1.setLayout(new FlowLayout());
+            panel1.add(makeDonationButton);
+            panel1.add(logoutButton);
+            
         logoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
