@@ -79,8 +79,8 @@ public class PDFParser {
 				i++;
 			}
 			
-			if (merchant.charAt(merchant.length()-1) == '+' || merchant.charAt(merchant.length()-1) == '-') merchant = merchant.substring(0, merchant.length() - 1);
-			if (city.charAt(city.length()-1) == '+' || merchant.charAt(merchant.length()-1) == '-' ) city = city.substring(0, city.length() - 1);
+			if (merchant.charAt(merchant.length()-1) == '+' || merchant.charAt(merchant.length()-1) == '-' || merchant.charAt(merchant.length()-1) == '\n') merchant = merchant.substring(0, merchant.length() - 1);
+			if (city.charAt(city.length()-1) == '+' || city.charAt(city.length()-1) == '-' || city.charAt(city.length()-1) == '\n') city = city.substring(0, city.length() - 1);
 			transactions.add(new Transaction(merchant, amount, city));
 			}
 		}
