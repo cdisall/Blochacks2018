@@ -66,7 +66,7 @@ public class Reciever {
     	String message = "";
     	
     	for (Category c : this.report) {
-    		message += "Category: " + c.getType() + " Amount: " + c.getAmount() + '\n';
+    		message += "Category: " + c.getType() + " Amount: $" + c.getAmount() + '\n';
     	}
     	
     	return message;

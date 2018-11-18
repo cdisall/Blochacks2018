@@ -62,21 +62,21 @@ public class NeedsSite {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
             
-            	int amt = Integer.parseInt(label1.getText());
+            	int amt = Integer.parseInt(textField1.getText());
             	Login.recievers.get(Login.index).updateNeed(0, amt);
-            	amt = Integer.parseInt(label2.getText());
+            	amt = Integer.parseInt(textField2.getText());
             	Login.recievers.get(Login.index).updateNeed(1, amt);
-            	amt = Integer.parseInt(label3.getText());
+            	amt = Integer.parseInt(textField3.getText());
             	Login.recievers.get(Login.index).updateNeed(2, amt);
-            	amt = Integer.parseInt(label4.getText());
+            	amt = Integer.parseInt(textField4.getText());
             	Login.recievers.get(Login.index).updateNeed(3, amt);
-            	amt = Integer.parseInt(label5.getText());
+            	amt = Integer.parseInt(textField5.getText());
             	Login.recievers.get(Login.index).updateNeed(4, amt);
-            	amt = Integer.parseInt(label6.getText());
+            	amt = Integer.parseInt(textField6.getText());
             	Login.recievers.get(Login.index).updateNeed(5, amt);
-            	amt = Integer.parseInt(label7.getText());
+            	amt = Integer.parseInt(textField7.getText());
             	Login.recievers.get(Login.index).updateNeed(6, amt);
-            	amt = Integer.parseInt(label8.getText());
+            	amt = Integer.parseInt(textField8.getText());
             	Login.recievers.get(Login.index).setUrgency(amt);
             	
                 JFrame frame = new JFrame("RecSite");
