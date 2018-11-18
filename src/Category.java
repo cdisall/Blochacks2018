@@ -2,8 +2,6 @@ public class Category{
     private String type;
     private int amount;
 
-
-
     public Category(String type, int amount){
         this.type = type;
         this.amount = amount;

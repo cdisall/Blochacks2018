@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 public class Donor {
 
     //donor ranking  system
