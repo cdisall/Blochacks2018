@@ -12,6 +12,10 @@ public class MainFrame {
 		PDFParser parse = new PDFParser(file);
 		transactions = parse.getTransactions();
 		addCategory(transactions);
+		ArrayList<Category> tester = new ArrayList<Category>();
+		tester = getReport(transactions);
+		System.out.println(tester.toString());
+		
 		
 		
 	}
@@ -33,5 +37,28 @@ public class MainFrame {
 	public static void sendSomewhere(String url) throws IOException, URISyntaxException {
 		java.net.URI tester = new java.net.URI(url);
 		java.awt.Desktop.getDesktop().browse(tester);
+	}
+	
+	public static ArrayList<Category> getReport(ArrayList<Transaction> transactions){
+		ArrayList<Category> budget = new ArrayList<Category>();
+		
+		for (Transaction x : transactions) {
+			
+			boolean test = true;
+			for (Category y : budget) {
+				if (x.getCategory().equals(y.getType())) {
+					test=false;
+					double addAmount = (x.getAmount());
+					y.setAmount(y.getAmount()+ (int)addAmount);
+				}
+			}
+			if(test) {
+				double addAmount = (x.getAmount());
+				Category temp = new Category(x.getCategory(), (int)addAmount);
+				budget.add(temp);
+			}
+		}
+		
+		return budget;
 	}
 }

@@ -19,4 +19,8 @@ public class Category{
     public void setAmount(int amount) {
         this.amount = amount;
     }
+    
+    public String toString() {
+    	return "Type: " + type + " Amount: " + amount;
+    } 
 }
