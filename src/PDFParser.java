@@ -59,7 +59,7 @@ public class PDFParser {
 			while(!Character.isDigit(text.charAt(i))){	
 				if(text.charAt(i) == ' ') {
 					merchant += "+";
-				} else if (text.charAt(i) != '#'){
+				} else if (text.charAt(i) != '#' && text.charAt(i) != '\n'){
 					merchant += "" + text.charAt(i);
 				}
 				i++;
@@ -73,7 +73,7 @@ public class PDFParser {
 			while(text.charAt(i) != '\n') {
 				if(text.charAt(i) == ' ') {
 					city += "+";
-				} else if (text.charAt(i) != '#'){
+				} else if (text.charAt(i) != '#' && text.charAt(i) != '\n'){
 					city += "" + text.charAt(i);
 				}
 				i++;
