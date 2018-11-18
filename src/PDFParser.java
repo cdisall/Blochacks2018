@@ -18,6 +18,7 @@ public class PDFParser {
 			if (!doc.isEncrypted()) {
 				PDFTextStripper stripper = new PDFTextStripper();
 				String text = stripper.getText(doc);
+				doc.close();
 				return text;
 			}
 			else {
