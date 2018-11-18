@@ -9,6 +9,9 @@ public class DonorSite {
     public JButton makeDonationButton  = new JButton("Make Donation");
     public JButton logoutButton = new JButton("Logout");
     public JPanel panel1 = new JPanel(null);
+    JComboBox comboBox;
+    JLabel label1= new JLabel("Select Recipient");
+    JButton button = new JButton("Select");
     
         public DonorSite() {
             makeDonationButton.setPreferredSize(new Dimension(150, 50));
@@ -17,6 +20,23 @@ public class DonorSite {
             panel1.setLayout(new FlowLayout());
             panel1.add(makeDonationButton);
             panel1.add(logoutButton);
+            panel1.add(label1);
+            
+            //Get array of receivers
+            String[] recipients = new String[Login.recievers.size()];
+            String message = "";
+            int i = 0;
+            for (Reciever r : Login.recievers) {
+            	message += "Email: " + r.getEmail() + " Urgency: " + r.getUrgency();
+            	recipients[i]=message;
+            	i++;
+            	message="";
+            }
+            
+            comboBox = new JComboBox(recipients);
+            panel1.add(comboBox);
+            panel1.setLayout(new FlowLayout());
+            panel1.add(button);
             
         logoutButton.addActionListener(new ActionListener() {
             @Override
@@ -34,13 +54,14 @@ public class DonorSite {
                 try {
 					//Configure email message
                 	String message = "Thank you for your dontation!" + '\n';
-                	int recIndex = 0;
+                	int recIndex = comboBox.getSelectedIndex();
+                	System.out.println("The index is:" + recIndex);
                 	if(Login.recievers.get(recIndex).getReport().isEmpty()) {
-                		message += "Unfortunately, your recipient has not submitted any expense reports yet. Please check back at a later date. \n Thank You, \nThe Refugee Centre";
+                		message += "Unfortunately, your recipient has not submitted any expense reports yet. Please check back at a later date. Thank You, The Refugee Centre";
                 		
                 	}
                 	else {
-                		message += "The most recent expense report for your recipient is shown below" + '\n' + Login.recievers.get(recIndex).toString() + "\n Thank You, \n The Refugee Centre";
+                		message += "The most recent expense report for your recipient is shown below" + '\n' + Login.recievers.get(recIndex).toString() + " Thank You, The Refugee Centre";
                 	}
                 	
                 	//Send to donate

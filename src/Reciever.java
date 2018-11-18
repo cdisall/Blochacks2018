@@ -10,6 +10,7 @@ public class Reciever {
     private ArrayList<Category> needs;
     private ArrayList<Category> report;
     private String description;
+    private int urgency;
 
 
     public Reciever(String firstName, String lastName, String email) {
@@ -18,6 +19,7 @@ public class Reciever {
         this.email = email;
         this.needs = new ArrayList<Category>();
         this.report = new ArrayList<Category>();
+        this.urgency = 0;
     }
 
     public Reciever(String email, String pwd) {
@@ -25,6 +27,7 @@ public class Reciever {
         this.password = pwd;
         this.needs = new ArrayList<Category>();
         this.report = new ArrayList<Category>();
+        this.urgency = 0;
     }
     
     public void setEmail(String email) {
@@ -43,8 +46,16 @@ public class Reciever {
         return email;
     }
     
+    public int getUrgency() {
+    	return urgency;
+    }
+    
     public void setReport(ArrayList<Category> report) {
         this.report=report;
+    }
+    
+    public void setUrgency(int urgency) {
+    	this.urgency=urgency;
     }
     
     public ArrayList<Category> getReport(){
@@ -79,6 +90,10 @@ public class Reciever {
         needs.add(5, c5);
         needs.add(6, c6);
     }
+    
+    public void updateNeed(int index, int amount) {
+    	needs.get(index).setAmount(amount);
+    }
 
     public void updateNeed(String type, int amount){
         for(int j=0; j<needs.size(); j++){
@@ -86,6 +101,8 @@ public class Reciever {
                 needs.get(j).setAmount(amount);
             }
         }
+    
+        
    }
 
 

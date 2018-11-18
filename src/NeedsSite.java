@@ -62,6 +62,23 @@ public class NeedsSite {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
             
+            	int amt = Integer.parseInt(label1.getText());
+            	Login.recievers.get(Login.index).updateNeed(0, amt);
+            	amt = Integer.parseInt(label2.getText());
+            	Login.recievers.get(Login.index).updateNeed(1, amt);
+            	amt = Integer.parseInt(label3.getText());
+            	Login.recievers.get(Login.index).updateNeed(2, amt);
+            	amt = Integer.parseInt(label4.getText());
+            	Login.recievers.get(Login.index).updateNeed(3, amt);
+            	amt = Integer.parseInt(label5.getText());
+            	Login.recievers.get(Login.index).updateNeed(4, amt);
+            	amt = Integer.parseInt(label6.getText());
+            	Login.recievers.get(Login.index).updateNeed(5, amt);
+            	amt = Integer.parseInt(label7.getText());
+            	Login.recievers.get(Login.index).updateNeed(6, amt);
+            	amt = Integer.parseInt(label8.getText());
+            	Login.recievers.get(Login.index).setUrgency(amt);
+            	
                 JFrame frame = new JFrame("RecSite");
                 frame.setContentPane(new RecSite().panel1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

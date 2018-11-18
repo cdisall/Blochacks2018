@@ -64,7 +64,6 @@ public class Login {
         r2.setDefaultNeeds();
         r3.setDefaultNeeds();
     	
-    	
     	JFrame frame = new JFrame("Login");
         frame.setContentPane(new Login().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
