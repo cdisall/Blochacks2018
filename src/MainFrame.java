@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import javax.swing.*;
 
@@ -9,18 +11,8 @@ public class MainFrame {
 		String file = "Summary.pdf";
 		PDFParser parse = new PDFParser(file);
 		transactions = parse.getTransactions();
-		//System.out.println(transactions.toString());
 		addCategory(transactions);
-
-		System.out.println(transactions.toString());
 		
-//		String merchant = transactions.get(0).getMerchant();
-//		String city = transactions.get(0).getCity();
-//		
-//		System.out.println(merchant);
-//		System.out.println(city + "Hello ");
-//		String category = REST.getCategory(merchant, city);
-//		System.out.println(category);
 		
 	}
 	
@@ -36,5 +28,10 @@ public class MainFrame {
 			
 			x.setCategory(category);
 		}
+	}
+	
+	public static void sendSomewhere(String url) throws IOException, URISyntaxException {
+		java.net.URI tester = new java.net.URI(url);
+		java.awt.Desktop.getDesktop().browse(tester);
 	}
 }
