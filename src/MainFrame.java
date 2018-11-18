@@ -38,10 +38,6 @@ public class MainFrame {
         r2.setDefaultNeeds();
         r3.setDefaultNeeds();
 
-
-
-
-
 	}
 	
 	public static void addCategory(ArrayList<Transaction> transactions) {
