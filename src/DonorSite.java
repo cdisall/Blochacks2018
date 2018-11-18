@@ -11,12 +11,11 @@ public class DonorSite {
     public JPanel panel1 = new JPanel(null);
     JComboBox comboBox;
     JLabel label1= new JLabel("Select Recipient");
-    JButton button = new JButton("Select");
     
         public DonorSite() {
             makeDonationButton.setPreferredSize(new Dimension(150, 50));
             logoutButton.setPreferredSize(new Dimension(150, 50));
-            panel1.setPreferredSize(new Dimension(400,80));
+            panel1.setPreferredSize(new Dimension(400,120));
             panel1.setLayout(new FlowLayout());
             panel1.add(makeDonationButton);
             panel1.add(logoutButton);
@@ -36,7 +35,6 @@ public class DonorSite {
             comboBox = new JComboBox(recipients);
             panel1.add(comboBox);
             panel1.setLayout(new FlowLayout());
-            panel1.add(button);
             
         logoutButton.addActionListener(new ActionListener() {
             @Override
