@@ -1,30 +1,32 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.*;
 
 public class Login {
-    public  JButton donorButton;
-    public  JButton recipientButton;
-    public  JPanel Panel1;
+    public  JButton donorButton = new JButton("Donor");
+    public  JButton recipientButton = new JButton("Receipient");
+    public  JPanel panel1 = new JPanel(new FlowLayout());
 
     public Login() {
+        panel1.add(donorButton);
+        panel1.add(recipientButton);
+        
         donorButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                new DonorLogin();
                 JFrame frame = new JFrame("DonorLogin");
-                frame.setContentPane(new DonorLogin().Panel1);
+                frame.setContentPane(new DonorLogin().panel1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
-                frame.setVisible(true);
+                frame.setVisible(true); 
             }
         });
         recipientButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                new RecLogin();
                 JFrame frame = new JFrame("RecLogin");
-                frame.setContentPane(new RecLogin().Panel1);
+                frame.setContentPane(new RecLogin().panel1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
@@ -33,7 +35,7 @@ public class Login {
     }
     public static void main(String[] args) {
         JFrame frame = new JFrame("Login");
-        frame.setContentPane(new Login().Panel1);
+        frame.setContentPane(new Login().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

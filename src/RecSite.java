@@ -4,19 +4,24 @@ import java.awt.event.ActionListener;
 import java.lang.Object;
 import java.awt.Component;
 import java.awt.Container;
-import javax.swing.JComponent;
+
 import javax.swing.filechooser.*;
 import java.io.File;
-import javax.swing.JFileChooser;
+
 import javax.swing.filechooser.FileSystemView;
 
 public class RecSite {
-    public JButton uploadStatementButton;
-    public  JButton updateNeedsButton;
-    public  JPanel Panel1;
-    public  JButton logoutButton;
+    public JButton uploadStatementButton = new JButton("Updload Statement");
+    public  JButton updateNeedsButton = new JButton("Update");
+    public  JPanel panel1 = new JPanel();
+    public  JButton logoutButton = new JButton("Logout");
 
     public RecSite() {
+        
+        panel1.add(updateNeedsButton);
+        panel1.add(uploadStatementButton);
+        panel1.add(logoutButton);
+        
         uploadStatementButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -38,7 +43,7 @@ public class RecSite {
             public void actionPerformed(ActionEvent actionEvent) {
                 new NeedsSite();
                 JFrame frame = new JFrame("NeedsSite");
-                frame.setContentPane(new NeedsSite().Panel1);
+                frame.setContentPane(new NeedsSite().panel1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
@@ -49,13 +54,14 @@ public class RecSite {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
-                new RecLogin();
-                JFrame frame = new JFrame("RecLogin");
-                frame.setContentPane(new RecLogin().Panel1);
+                new Login();
+                JFrame frame = new JFrame("Login");
+                frame.setContentPane(new Login().panel1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
             }
         });
+
     }
 }

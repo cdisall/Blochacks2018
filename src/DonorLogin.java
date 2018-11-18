@@ -5,18 +5,22 @@ import java.awt.event.InputMethodEvent;
 import java.awt.event.InputMethodListener;
 
 public class DonorLogin {
-    public  JPanel Panel1;
-    public  JTextField username;
-    public  JButton loginButton;
-    private JPasswordField password;
+    public  JPanel panel1 = new JPanel();
+    public  JTextField username = new JTextField();
+    public  JButton loginButton = new JButton("Login");
+    private JPasswordField password = new JPasswordField();
 
     public DonorLogin() {
+    	 
+        panel1.add(username);
+        panel1.add(password);
+        panel1.add(loginButton);
+        
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                new DonorSite();
                 JFrame frame = new JFrame("DonorSite");
-                frame.setContentPane(new DonorSite().Panel1);
+                frame.setContentPane(new DonorSite().panel1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
@@ -25,8 +29,7 @@ public class DonorLogin {
         username.addInputMethodListener(new InputMethodListener() {
             @Override
             public void inputMethodTextChanged(InputMethodEvent inputMethodEvent) {
-                JTextField txtInput = new JTextField("");
-                String userame=username.getText();
+                String usrName=username.getText();
             }
 
             @Override
@@ -37,8 +40,7 @@ public class DonorLogin {
         password.addInputMethodListener(new InputMethodListener() {
             @Override
             public void inputMethodTextChanged(InputMethodEvent inputMethodEvent) {
-                JTextField txtInput = new JTextField("");
-                String userame=password.getText();
+                String usrName=password.getText();
             }
 
             @Override
