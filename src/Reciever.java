@@ -26,6 +26,14 @@ public class Reciever {
         this.description = description;
     }
 
+    public int getPassword() {
+        return password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
     //need to initalize these before
     public void setDefaultNeeds(){
         Category c0 = new Category("misc_store", 0);

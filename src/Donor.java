@@ -12,11 +12,21 @@ public class Donor {
     private double donated;
     private ArrayList<Integer> associatedRecievers;
 
+
+
     public Donor(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
 
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getPassword() {
+        return password;
     }
 
     public void setEmail(String email) {

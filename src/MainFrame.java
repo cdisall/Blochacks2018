@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
+import java.util.*;
 import javax.swing.*;
 
 public class MainFrame {
@@ -81,4 +81,22 @@ public class MainFrame {
 		
 		return budget;
 	}
+
+	public static boolean checkLoginRecievers(String email, String password, ArrayList<Reciever> recievers){
+	    for(int i=0; i<recievers.size(); i++){
+	        if(email.equals(recievers.get(i).getEmail()) && password.equals(recievers.get(i).getPassword())){
+	            return true;
+            }
+        }
+	    return false;
+    }
+
+    public static boolean checkLoginDonors(String email, String password, ArrayList<Donor> donors){
+        for(int i=0; i<donors.size(); i++){
+            if(email.equals(donors.get(i).getEmail()) && password.equals(donors.get(i).getPassword())){
+                return true;
+            }
+        }
+        return false;
+    }
 }
