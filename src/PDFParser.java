@@ -56,8 +56,12 @@ public class PDFParser {
 				i += 3;
 
 
-			while(!Character.isDigit(text.charAt(i))){
-				merchant += "" + text.charAt(i);
+			while(!Character.isDigit(text.charAt(i))){	
+				if(text.charAt(i) == ' ') {
+					merchant += "+";
+				} else if (text.charAt(i) != '#'){
+					merchant += "" + text.charAt(i);
+				}
 				i++;
 			}
 			
@@ -67,10 +71,16 @@ public class PDFParser {
 			i++;
 
 			while(text.charAt(i) != '\n') {
-				city += "" + text.charAt(i);
+				if(text.charAt(i) == ' ') {
+					city += "+";
+				} else if (text.charAt(i) != '#'){
+					city += "" + text.charAt(i);
+				}
 				i++;
 			}
-	
+			
+			if (merchant.charAt(merchant.length()-1) == '+' || merchant.charAt(merchant.length()-1) == '-') merchant = merchant.substring(0, merchant.length() - 1);
+			if (city.charAt(city.length()-1) == '+' || merchant.charAt(merchant.length()-1) == '-' ) city = city.substring(0, city.length() - 1);
 			transactions.add(new Transaction(merchant, amount, city));
 			}
 		}
