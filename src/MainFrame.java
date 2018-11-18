@@ -10,15 +10,15 @@ public class MainFrame {
 		String file = "Summary.pdf";
 		PDFParser parse = new PDFParser(file);
 		transactions = parse.getTransactions();
-//		System.out.println(transactions.toString());
+		System.out.println(transactions.toString());
 		
-		String merchant = transactions.get(0).getMerchant();
-		String city = transactions.get(0).getCity();
-		
-		System.out.println(merchant);
-		System.out.println(city + "Hello ");
-		String category = REST.getCategory(merchant, city);
-		System.out.println(category);
+//		String merchant = transactions.get(0).getMerchant();
+//		String city = transactions.get(0).getCity();
+//		
+//		System.out.println(merchant);
+//		System.out.println(city + "Hello ");
+//		String category = REST.getCategory(merchant, city);
+//		System.out.println(category);
 		
 	}
 }
