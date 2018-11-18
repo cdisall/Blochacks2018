@@ -18,7 +18,31 @@ public class RecLogin {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                JFrame frame = new JFrame("RecSite");
+            	
+            	//Check if user exists. If not, create an account.
+            	String email = username.getText();
+            	String pwd = passwordField1.getText();
+            	boolean test = false;
+            	for (Reciever R : Login.recievers) {
+            		if(R.getEmail().equals(email)) {
+            			if(R.getPassword().equals(pwd)) {
+            				test=true;
+            				Login.index=Login.recievers.indexOf(R);
+            				break;
+            			}
+            		}
+            	}
+            	if(!test) {
+            		Reciever newOne = new Reciever(email, pwd);
+            		newOne.setDefaultNeeds();
+            		Login.index=Login.recievers.indexOf(newOne);
+            		Login.recievers.add(newOne);
+            	}
+            	
+            	System.out.println("Welcome!");
+            	System.out.println(Login.recievers.toString());
+            	
+            	JFrame frame = new JFrame("RecSite");
                 frame.setContentPane(new RecSite().panel1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();

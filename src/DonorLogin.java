@@ -19,7 +19,27 @@ public class DonorLogin {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                JFrame frame = new JFrame("DonorSite");
+            	String email = username.getText();
+            	String pwd = password.getText();
+            	boolean test = false;
+            	for (Donor d : Login.donors) {
+            		if(d.getEmail().equals(email)) {
+            			if(d.getPassword().equals(pwd)) {
+            				test=true;
+            				Login.index=Login.donors.indexOf(d);
+            				break;
+            			}
+            		}
+            	}
+            	if(!test) {
+            		Donor newOne = new Donor(email, pwd);
+            		Login.index=Login.donors.indexOf(newOne);
+            		Login.donors.add(newOne);
+            	}
+            	
+            	//System.out.println("Welcome!");
+            	//System.out.println(Login.donors.toString());
+            	JFrame frame = new JFrame("DonorSite");
                 frame.setContentPane(new DonorSite().panel1);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();

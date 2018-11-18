@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.Object;
+import java.util.ArrayList;
 import java.awt.Component;
 import java.awt.Container;
 
@@ -29,13 +30,24 @@ public class RecSite {
                 chooseFile.setDialogTitle("Choose a file.");
                 chooseFile.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
+                String file;
                 int returnValue = chooseFile.showOpenDialog(null);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
                     if (chooseFile.getSelectedFile().isFile()) {
                         System.out.println("You selected the file: " + chooseFile.getSelectedFile());
+                        file = "" + chooseFile.getSelectedFile();
+                        ArrayList<Transaction> transactions = new ArrayList<>();
+                        PDFParser parse = new PDFParser(file);
+                		transactions = parse.getTransactions();
+                		MainFrame.addCategory(transactions);
+                		ArrayList<Category> tester = new ArrayList<Category>();
+                		tester = MainFrame.getReport(transactions);
+                		Login.recievers.get(Login.index).setReport(tester);
                     }
                 }
+                
             }
+            
         });
 
         updateNeedsButton.addActionListener(new ActionListener() {

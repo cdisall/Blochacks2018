@@ -16,27 +16,7 @@ public class MainFrame {
 		tester = getReport(transactions);
 		System.out.println(tester.toString());
 
-        Donor d1 = new Donor("Bob", "Doe", "bobdoe@gmail.com");
-        Donor d2 = new Donor("Joe", "Youn", "joeyoun@gmail.com");
-        Donor d3 = new Donor("Julie", "Robb", "julierobb@gmail.com");
-
-        Reciever r1 = new Reciever("Ion", "Martin", "ionmartins@gmail.com");
-        Reciever r2 = new Reciever("Bronf", "Man", "bronfman@gmail.com");
-        Reciever r3 = new Reciever("Jane", "Sommers", "janesommers@gmail.com");
-
-        ArrayList<Donor> donors = new ArrayList<Donor>();
-        ArrayList<Reciever> recievers = new ArrayList<Reciever>();
-
-        donors.add(0, d1);
-        donors.add(1, d2);
-        donors.add(2, d3);
-        recievers.add(0, r1);
-        recievers.add(1, r2);
-        recievers.add(2, r3);
-
-        r1.setDefaultNeeds();
-        r2.setDefaultNeeds();
-        r3.setDefaultNeeds();
+        
 
 	}
 	

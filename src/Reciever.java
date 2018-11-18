@@ -3,11 +3,12 @@ import java.util.*;
 public class Reciever {
 
     //urgency + description
-    private final String firstName;
-    private final String lastName;
+    private String firstName;
+    private String lastName;
     private String email;
-    private int password;
+    private String password;
     private ArrayList<Category> needs;
+    private ArrayList<Category> report;
     private String description;
 
 
@@ -16,8 +17,16 @@ public class Reciever {
         this.lastName = lastName;
         this.email = email;
         this.needs = new ArrayList<Category>();
+        this.report = new ArrayList<Category>();
     }
 
+    public Reciever(String email, String pwd) {
+        this.email = email;
+        this.password = pwd;
+        this.needs = new ArrayList<Category>();
+        this.report = new ArrayList<Category>();
+    }
+    
     public void setEmail(String email) {
         this.email = email;
     }
@@ -26,12 +35,30 @@ public class Reciever {
         this.description = description;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
     public String getEmail() {
         return email;
+    }
+    
+    public void setReport(ArrayList<Category> report) {
+        this.report=report;
+    }
+    
+    public ArrayList<Category> getReport(){
+    	return this.report;
+    }
+    
+    public String toString(){
+    	String message = "";
+    	
+    	for (Category c : this.report) {
+    		message += "Category: " + c.getType() + " Amount: " + c.getAmount() + '\n';
+    	}
+    	
+    	return message;
     }
 
     //need to initalize these before

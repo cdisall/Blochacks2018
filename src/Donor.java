@@ -4,10 +4,10 @@ public class Donor {
 
     //donor ranking  system
 
-    private final String firstName;
-    private final String lastName;
+    private String firstName;
+    private String lastName;
     private String email;
-    private int password;
+    private String password;
 
     private double donated;
     private ArrayList<Integer> associatedRecievers;
@@ -20,12 +20,17 @@ public class Donor {
         this.email = email;
 
     }
+    
+    public Donor(String email, String password) {
+    	this.email=email;
+    	this.password=password;
+    }
 
     public String getEmail() {
         return email;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 

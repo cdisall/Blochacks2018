@@ -6,7 +6,8 @@ import javax.mail.internet.*;
 import javax.activation.*;
 
 public class SendEmail {
-   public SendEmail(String recipient, String emailBody) {    
+   
+	public static void sendEmail(String recipient, String emailBody) {    
       String to = recipient;
       String from = "hacksbogdan@gmail.com";
 
