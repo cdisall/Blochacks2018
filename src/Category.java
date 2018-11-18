@@ -3,10 +3,13 @@ public class Category{
     private int amount;
 
 
+
     public Category(String type, int amount){
         this.type = type;
         this.amount = amount;
     }
+
+    //type: supermarket, bank, clothing store, pharmacy, gas, bus
 
     public String getType() {
         return type;

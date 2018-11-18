@@ -9,6 +9,7 @@ public class Reciever {
     private String email;
     private int password;
     private ArrayList<Category> needs;
+    private String description;
 
 
     public Reciever(String firstName, String lastName, String email) {
@@ -17,18 +18,23 @@ public class Reciever {
         this.email = email;
     }
 
-
     public void setEmail(String email) {
         this.email = email;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-   private void updateNeed(String type, int amount){
+    public void updateNeed(String type, int amount){
         for(int i=0; i<needs.size(); i++){
             if(needs.get(i).getType().equals(type)){
                 needs.get(i).setAmount(amount);
             }
         }
    }
+
+
+
 
 }
